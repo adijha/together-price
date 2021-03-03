@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+html,
+body {
+	background-color: #e5e5e5;
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+text {
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: 500;
+}
+.progress-ring__circle {
+	transition: 0.35s stroke-dashoffset;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+}
+.progress-ring__circle_border {
+	transition: 0.35s stroke-dashoffset;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	background: white;
+}
+input {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 80px;
+}
+.card {
+	height: 81px;
+	width: 362px;
+	background: #f9f9fc;
+	border-radius: 8px 8px 0px 0px;
+	display: flex;
+	align-items: center;
+}
+.card-lower-section {
+	height: 35px;
+	width: 362px;
+	background: #eae8fe;
+	border-radius: 0px 0px 8px 8px;
+	padding-top: 10px;
+	.card-lower-text {
+		font-family: Poppins;
+		font-size: 14px;
+		text-align: center;
+		color: #8463e7;
+		mix-blend-mode: normal;
+		margin: 0;
+		// line-height: 21px;
+		span {
+			text-decoration: underline;
+      font-weight: 700;
+		}
+	}
+}
+.progress-container {
+	width: 129px;
+	height: 129px;
+	overflow: hidden;
+	margin-top: -40px;
+}
+
+.plus-container {
+	font-family: Nunito;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 41px;
+	text-align: center;
+	color: #794bff;
+	background: #eae8fe;
+	border: 1px solid #835bf9;
+	box-sizing: border-box;
+	border-radius: 8px;
+	height: 45px;
+	width: 46px;
+	border-radius: 8px;
+	margin-right: 18px;
+}
+
+.progressbar-user-img {
+	border-radius: 50%;
+	margin-top: -110px;
+	object-fit: cover;
+	height: 70%;
+	margin-bottom: 33px;
+	margin-left: 15px;
+}
+.card-user-details {
+	flex: 1;
+	margin-left: -7px;
+	.card-user-name {
+		font-family: Poppins;
+		font-weight: 500;
+		font-size: 17px;
+		margin-bottom: 5px;
+	}
+	.card-user-desc {
+		font-family: Poppins;
+		font-size: 14px;
+		color: #818181;
+		mix-blend-mode: normal;
+		margin-bottom: 27px;
+		margin-top: -1px;
+	}
+}
