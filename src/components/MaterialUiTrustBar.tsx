@@ -45,6 +45,7 @@ export default function ProgressBar({
 					value={trust}
 					classes={{ circle: classes.circle }}
 				/>
+				<div className="material-trust-percent">{trust}</div>
 			</div>
 		</div>
 	);
