@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import AddButton from "./AddButton";
 import ProgressBar from "./ProgressBar";
+import "./searchContactCard.scss";
 
 type Contact = {
 	fullName: string;
@@ -12,11 +13,11 @@ interface Props {
 	contact: Contact;
 }
 
-export default function Card({ contact }: Props): ReactElement {
+export default function SearchContactCard({ contact }: Props): ReactElement {
 	const { trust, fullName, profileImageUrl } = contact;
 	return (
 		<>
-			<div className="card">
+			<div className="card-upper">
 				<ProgressBar trust={trust} profileImageUrl={profileImageUrl} />
 				<div className="card-user-details">
 					<h5 className="card-user-name">{fullName}</h5>

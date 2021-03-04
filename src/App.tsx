@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import Card from "./components/Card";
+import SearchContactCard from "./components/SearchContactCard";
 
 export default function App() {
 	const contact_data = {
@@ -11,7 +11,7 @@ export default function App() {
 	};
 	return (
 		<div>
-			<Card contact={contact_data} />
+			<SearchContactCard contact={contact_data} />
 		</div>
 	);
 }
