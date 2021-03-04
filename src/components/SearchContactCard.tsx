@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import AddButton from "./AddButton";
-import ProgressBar from "./ProgressBar";
+import ProgressBar from "./TrustBar";
 import "./searchContactCard.scss";
 
 type Contact = {

@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect } from "react";
+import "./trustBar.scss";
 
 interface Props {
 	profileImageUrl: string;
@@ -10,22 +11,20 @@ export default function ProgressBar({
 	profileImageUrl,
 }: Props): ReactElement {
 	function setProgress(percent: string | number) {
-		let circle = document.querySelector(
-			".progress-ring__circle"
-		) as SVGCircleElement;
+		let circle = document.querySelector(".trust-circle") as SVGCircleElement;
 		let percentOnBar = document.querySelector("text") as SVGTextElement;
-		let circleb = document.querySelector(
-			".progress-ring__circle_border"
+		let borderCircle = document.querySelector(
+			".trust-circle-border"
 		) as SVGCircleElement;
 		let radius = circle && circle.r.baseVal.value;
 		let circumference = radius * 2 * Math.PI;
 		circle.style.strokeDasharray = `${circumference} ${circumference}`;
-		circleb.style.strokeDasharray = `${circumference} ${circumference}`;
+		borderCircle.style.strokeDasharray = `${circumference} ${circumference}`;
 		circle.style.strokeDashoffset = `${circumference}`;
-		circleb.style.strokeDashoffset = `${circumference}`;
+		borderCircle.style.strokeDashoffset = `${circumference}`;
 		const offset = circumference - (Number(percent) / 100) * circumference;
 		circle.style.strokeDashoffset = offset.toString();
-		circleb.style.strokeDashoffset = offset.toString();
+		borderCircle.style.strokeDashoffset = offset.toString();
 		percentOnBar.innerHTML = percent > 100 ? "100" : percent.toString();
 	}
 
@@ -41,13 +40,8 @@ export default function ProgressBar({
 	}, []);
 
 	return (
-		<div className="progress-container">
-			<svg
-				className="progress-ring"
-				width={126}
-				height={126}
-				style={{ position: "relative" }}
-			>
+		<div className="trust-container">
+			<svg width={126} height={126} style={{ position: "relative" }}>
 				<defs>
 					<linearGradient id="gradient" gradientTransform="rotate(95)">
 						<stop offset="6.7%" stopColor="#FA5D75" />
@@ -63,7 +57,7 @@ export default function ProgressBar({
 					/>
 				</defs>
 				<circle
-					className="progress-ring__circle_border"
+					className="trust-circle-border"
 					stroke="white"
 					strokeWidth="8.25"
 					fill="transparent"
@@ -73,7 +67,7 @@ export default function ProgressBar({
 					strokeLinecap="round"
 				/>
 				<circle
-					className="progress-ring__circle"
+					className="trust-circle"
 					stroke="url(#gradient)"
 					strokeWidth={7}
 					fill="url(#image)"
@@ -102,7 +96,11 @@ export default function ProgressBar({
 				max={100}
 				placeholder="progress"
 			/>
-			<img src={profileImageUrl} className="progressbar-user-img" alt="user" />
+			<img
+				src={profileImageUrl}
+				className="trustbar-profile-img"
+				alt="user-profile-img"
+			/>
 		</div>
 	);
 }
