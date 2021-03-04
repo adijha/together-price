@@ -6,8 +6,8 @@ export default function App() {
 	const contact_data = {
 		userId: 1234,
 		fullName: "Gina Snelly",
-		profileImageUrl: "https://randomuser.me/api/portraits/women/55.jpg",
-		trust: 85,
+		profileImageUrl: "https://randomuser.me/api/portraits/women/14.jpg",
+		trust: 75,
 	};
 	return (
 		<div className="home-container" >

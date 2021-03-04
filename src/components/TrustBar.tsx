@@ -11,13 +11,12 @@ export default function ProgressBar({
 	profileImageUrl,
 }: Props): ReactElement {
 	function setProgress(percent: string | number) {
-		let circle = document.querySelector(".trust-circle") as SVGCircleElement;
-		let percentOnBar = document.querySelector("text") as SVGTextElement;
-		let borderCircle = document.querySelector(
+		const circle = document.querySelector(".trust-circle") as SVGCircleElement;
+		const borderCircle = document.querySelector(
 			".trust-circle-border"
 		) as SVGCircleElement;
-		let radius = circle && circle.r.baseVal.value;
-		let circumference = radius * 2 * Math.PI;
+		const radius = circle?.r.baseVal.value;
+		const circumference = radius * 2 * Math.PI;
 		circle.style.strokeDasharray = `${circumference} ${circumference}`;
 		borderCircle.style.strokeDasharray = `${circumference} ${circumference}`;
 		circle.style.strokeDashoffset = `${circumference}`;
@@ -25,23 +24,15 @@ export default function ProgressBar({
 		const offset = circumference - (Number(percent) / 100) * circumference;
 		circle.style.strokeDashoffset = offset.toString();
 		borderCircle.style.strokeDashoffset = offset.toString();
-		percentOnBar.innerHTML = percent > 100 ? "100" : percent.toString();
 	}
 
 	useEffect(() => {
-		// const input = document.querySelector("input") as HTMLInputElement;
 		setProgress(trust);
-
-		// input.addEventListener("change", function (e) {
-		// 	if (Number(input.value) < 101 && Number(input.value) > -1) {
-		// 		setProgress(input.value);
-		// 	}
-		// });
 	}, [trust]);
 
 	return (
 		<div className="trust-container">
-			<svg width={126} height={126} style={{ position: "relative" }}>
+			<svg width={120} height={120} style={{ position: "relative" }}>
 				<defs>
 					<linearGradient id="gradient" gradientTransform="rotate(95)">
 						<stop offset="6.7%" stopColor="#FA5D75" />
@@ -59,43 +50,35 @@ export default function ProgressBar({
 				<circle
 					className="trust-circle-border"
 					stroke="white"
-					strokeWidth="8.25"
+					strokeWidth="7"
 					fill="transparent"
-					r={50}
+					r={44}
 					cx={60}
-					cy={60}
+					cy={54}
 					strokeLinecap="round"
 				/>
 				<circle
 					className="trust-circle"
 					stroke="url(#gradient)"
-					strokeWidth={7}
+					strokeWidth={5.5}
 					fill="url(#image)"
-					r={50}
+					r={44}
 					cx={60}
-					cy={60}
+					cy={54}
 					strokeLinecap="round"
 				/>
-				<circle fill="#6A3EEA" r="13.87px" cx={60} cy="18.5" />
+				<circle fill="#6A3EEA" r="13.87px" cx={55} cy={21} />
 				<text
-					x={60}
-					y={10}
+					x={55}
+					y={12}
 					textAnchor="middle"
 					fontSize="13px"
 					fill="white"
 					dy="14px"
 				>
-					75
+					{trust}
 				</text>
 			</svg>
-			{/* <input
-				defaultValue={trust}
-				type="number"
-				step={5}
-				min={0}
-				max={100}
-				placeholder="progress"
-			/> */}
 			<img
 				src={profileImageUrl}
 				className="trustbar-profile-img"
