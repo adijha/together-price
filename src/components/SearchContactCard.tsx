@@ -36,7 +36,7 @@ export default function SearchContactCard({
 			</div>
 			<div className="card-lower-section">
 				<p className="card-lower-text">
-					Sta già condividendo <span>Disney Plus</span>
+					Sta già condividendo <b>Disney Plus</b>
 				</p>
 			</div>
 		</div>
