@@ -8,7 +8,7 @@ export default function App() {
 		userId: 1234,
 		fullName: "Gina Snelly",
 		profileImageUrl: "https://randomuser.me/api/portraits/women/24.jpg",
-		trust: 75,
+		trust: 80,
 	};
 	return (
 		<div className="home-container">
