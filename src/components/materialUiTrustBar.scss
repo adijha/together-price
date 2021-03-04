@@ -1,12 +1,12 @@
 .material-trust-container {
-	width: 96px;
-	height: 96px;
-
+	width: 104px;
+	height: 104px;
 	// border: 1px solid hotpink;
 	display: flex;
 	align-items: flex-start;
 	margin-right: 20px;
 	position: relative;
+	margin-top: -30px;
 
 	.material-trustbar-profile-img {
 		border-radius: 50%;
@@ -14,6 +14,6 @@
 		height: 79px;
 		position: absolute;
 		top: 8px;
-		left: 8.7px;
+		left: 17.2px;
 	}
 }
