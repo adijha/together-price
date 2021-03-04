@@ -1,23 +1,25 @@
-
-import { type } from 'os';
-import React, { ReactElement } from 'react'
+import React, { ReactElement } from "react";
 import AddButton from "./AddButton";
 import ProgressBar from "./ProgressBar";
 
 type Contact = {
-	fullName:string
-}
+	fullName: string;
+	userId: number;
+	profileImageUrl: string;
+	trust: number;
+};
 interface Props {
-	contact:Contact
+	contact: Contact;
 }
 
-export default function Card({contact}: Props): ReactElement {
+export default function Card({ contact }: Props): ReactElement {
+	const { trust, fullName, profileImageUrl } = contact;
 	return (
 		<>
 			<div className="card">
-				<ProgressBar />
+				<ProgressBar trust={trust} profileImageUrl={profileImageUrl} />
 				<div className="card-user-details">
-					<h5 className="card-user-name">{contact.fullName}</h5>
+					<h5 className="card-user-name">{fullName}</h5>
 					<p className="card-user-desc">nessuna connessione</p>
 				</div>
 				<AddButton />
@@ -28,5 +30,5 @@ export default function Card({contact}: Props): ReactElement {
 				</p>
 			</div>
 		</>
-	)
+	);
 }

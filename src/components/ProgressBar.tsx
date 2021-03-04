@@ -1,29 +1,36 @@
-import React, { ReactElement,useEffect } from 'react'
+import React, { ReactElement, useEffect } from "react";
 
 interface Props {
-	
+	profileImageUrl: string;
+	trust: number;
 }
 
-
-export default function ProgressBar({ }: Props): ReactElement {
+export default function ProgressBar({
+	trust,
+	profileImageUrl,
+}: Props): ReactElement {
 	function setProgress(percent: string | number) {
-		let circle = (document.querySelector(".progress-ring__circle") as SVGCircleElement)
-		let percentOnBar = (document.querySelector("text") as SVGTextElement)
-		let circleb = (document.querySelector(".progress-ring__circle_border") as SVGCircleElement)
-		let radius = circle &&circle.r.baseVal.value;
+		let circle = document.querySelector(
+			".progress-ring__circle"
+		) as SVGCircleElement;
+		let percentOnBar = document.querySelector("text") as SVGTextElement;
+		let circleb = document.querySelector(
+			".progress-ring__circle_border"
+		) as SVGCircleElement;
+		let radius = circle && circle.r.baseVal.value;
 		let circumference = radius * 2 * Math.PI;
-		circle.style.strokeDasharray= `${circumference} ${circumference}`;
+		circle.style.strokeDasharray = `${circumference} ${circumference}`;
 		circleb.style.strokeDasharray = `${circumference} ${circumference}`;
 		circle.style.strokeDashoffset = `${circumference}`;
 		circleb.style.strokeDashoffset = `${circumference}`;
 		const offset = circumference - (Number(percent) / 100) * circumference;
 		circle.style.strokeDashoffset = offset.toString();
 		circleb.style.strokeDashoffset = offset.toString();
-		percentOnBar.innerHTML = percent>100?'100':percent.toString();
+		percentOnBar.innerHTML = percent > 100 ? "100" : percent.toString();
 	}
-	
+
 	useEffect(() => {
-		const input =(document.querySelector("input") as HTMLInputElement)
+		const input = document.querySelector("input") as HTMLInputElement;
 		setProgress(input.value);
 
 		input.addEventListener("change", function (e) {
@@ -88,18 +95,14 @@ export default function ProgressBar({ }: Props): ReactElement {
 				</text>
 			</svg>
 			<input
-				defaultValue={75}
+				defaultValue={trust}
 				type="number"
 				step={5}
 				min={0}
 				max={100}
 				placeholder="progress"
 			/>
-			<img
-				src="https://randomuser.me/api/portraits/women/24.jpg"
-				className="progressbar-user-img"
-				alt="user"
-			/>
+			<img src={profileImageUrl} className="progressbar-user-img" alt="user" />
 		</div>
 	);
 }
