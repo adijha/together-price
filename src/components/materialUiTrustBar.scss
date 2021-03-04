@@ -1,0 +1,19 @@
+.material-trust-container {
+	width: 96px;
+	height: 96px;
+
+	// border: 1px solid hotpink;
+	display: flex;
+	align-items: flex-start;
+	margin-right: 20px;
+	position: relative;
+
+	.material-trustbar-profile-img {
+		border-radius: 50%;
+		object-fit: cover;
+		height: 79px;
+		position: absolute;
+		top: 8px;
+		left: 8.7px;
+	}
+}

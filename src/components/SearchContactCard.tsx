@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import AddButton from "./AddButton";
-import ProgressBar from "./TrustBar";
+import TrustBar from "./TrustBar";
+import MaterialUiTrustBar from "./MaterialUiTrustBar";
 import "./searchContactCard.scss";
 
 type Contact = {
@@ -11,14 +12,22 @@ type Contact = {
 };
 interface Props {
 	contact: Contact;
+	material: boolean;
 }
 
-export default function SearchContactCard({ contact }: Props): ReactElement {
+export default function SearchContactCard({
+	contact,
+	material,
+}: Props): ReactElement {
 	const { trust, fullName, profileImageUrl } = contact;
 	return (
 		<div>
 			<div className="card-upper">
-				<ProgressBar trust={trust} profileImageUrl={profileImageUrl} />
+				{material ? (
+					<MaterialUiTrustBar trust={trust} profileImageUrl={profileImageUrl} />
+				) : (
+					<TrustBar trust={trust} profileImageUrl={profileImageUrl} />
+				)}
 				<div className="card-user-details">
 					<h5 className="card-user-name">{fullName}</h5>
 					<p className="card-user-desc">nessuna connessione</p>
