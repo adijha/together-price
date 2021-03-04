@@ -19,7 +19,7 @@ export default function ProgressBar({ }: Props): ReactElement {
 		const offset = circumference - (Number(percent) / 100) * circumference;
 		circle.style.strokeDashoffset = offset.toString();
 		circleb.style.strokeDashoffset = offset.toString();
-		percentOnBar.innerHTML = percent.toString();
+		percentOnBar.innerHTML = percent>100?'100':percent.toString();
 	}
 	
 	useEffect(() => {
