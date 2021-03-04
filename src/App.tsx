@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.scss";
 import SearchContactCard from "./components/SearchContactCard";
-import MaterialUiTrustBar from "./components/MaterialUiTrustBar";
 
 export default function App() {
 	const contact_data = {
@@ -18,6 +17,8 @@ export default function App() {
 			<br />
 			<p> With Material UI</p>
 			<SearchContactCard contact={contact_data} material={true} />
+
+			<h5 className="italian-greetings">Buona giornata :)</h5>
 		</div>
 	);
 }

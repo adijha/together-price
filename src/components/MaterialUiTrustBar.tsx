@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement } from "react";
 import { CircularProgress, makeStyles } from "@material-ui/core";
 import "./materialUiTrustBar.scss";
 
@@ -6,7 +6,6 @@ const useStyles = makeStyles(() => ({
 	circle: {
 		stroke: "url(#linearColors)",
 		strokeLinecap: "round",
-		// fill:'url(#circle)',
 	},
 }));
 
@@ -37,7 +36,6 @@ export default function ProgressBar({
 					className="material-trustbar-profile-img"
 					alt="user"
 				/>
-
 				<CircularProgress
 					thickness={3}
 					size={95}
