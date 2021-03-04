@@ -16,7 +16,7 @@ interface Props {
 export default function SearchContactCard({ contact }: Props): ReactElement {
 	const { trust, fullName, profileImageUrl } = contact;
 	return (
-		<>
+		<div>
 			<div className="card-upper">
 				<ProgressBar trust={trust} profileImageUrl={profileImageUrl} />
 				<div className="card-user-details">
@@ -30,6 +30,6 @@ export default function SearchContactCard({ contact }: Props): ReactElement {
 					Sta già condividendo <span>Disney Plus</span>
 				</p>
 			</div>
-		</>
+		</div>
 	);
 }

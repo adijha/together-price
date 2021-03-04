@@ -10,7 +10,7 @@ export default function App() {
 		trust: 85,
 	};
 	return (
-		<div>
+		<div className="home-container" >
 			<SearchContactCard contact={contact_data} />
 		</div>
 	);

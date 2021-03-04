@@ -1,11 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+// input {
+// 	position: fixed;
+// 	top: 10px;
+// 	left: 10px;
+// 	width: 80px;
+// }
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-
-html,
-body {
-	background-color: #e5e5e5;
+.home-container {
 	display: flex;
 	align-items: center;
-	height: 100%;
+	justify-content: center;
+  align-content: center;
+  
 }

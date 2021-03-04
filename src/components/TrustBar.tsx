@@ -29,15 +29,15 @@ export default function ProgressBar({
 	}
 
 	useEffect(() => {
-		const input = document.querySelector("input") as HTMLInputElement;
-		setProgress(input.value);
+		// const input = document.querySelector("input") as HTMLInputElement;
+		setProgress(trust);
 
-		input.addEventListener("change", function (e) {
-			if (Number(input.value) < 101 && Number(input.value) > -1) {
-				setProgress(input.value);
-			}
-		});
-	}, []);
+		// input.addEventListener("change", function (e) {
+		// 	if (Number(input.value) < 101 && Number(input.value) > -1) {
+		// 		setProgress(input.value);
+		// 	}
+		// });
+	}, [trust]);
 
 	return (
 		<div className="trust-container">
@@ -88,14 +88,14 @@ export default function ProgressBar({
 					75
 				</text>
 			</svg>
-			<input
+			{/* <input
 				defaultValue={trust}
 				type="number"
 				step={5}
 				min={0}
 				max={100}
 				placeholder="progress"
-			/>
+			/> */}
 			<img
 				src={profileImageUrl}
 				className="trustbar-profile-img"
