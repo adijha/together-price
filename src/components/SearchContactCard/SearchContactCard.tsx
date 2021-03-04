@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
-import AddButton from "./AddButton";
-import TrustBar from "./TrustBar";
-import MaterialUiTrustBar from "./MaterialUiTrustBar";
+import AddButton from "../AddButton/AddButton";
+import TrustBar from "../TrustBar/TrustBar";
+import MaterialUiTrustBar from "../TrustBar/MaterialUiTrustBar";
 import "./searchContactCard.scss";
 
 type Contact = {

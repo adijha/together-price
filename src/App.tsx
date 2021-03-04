@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import SearchContactCard from "./components/SearchContactCard";
+import SearchContactCard from "./components/SearchContactCard/SearchContactCard";
 
 export default function App() {
 	const contact_data = {
@@ -13,7 +13,7 @@ export default function App() {
 		<div className="home-container">
 			<p> With custom css</p>
 			<SearchContactCard contact={contact_data} material={false} />
-			<br />
+
 			<br />
 			<p> With Material UI</p>
 			<SearchContactCard contact={contact_data} material={true} />
